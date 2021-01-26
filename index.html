@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+       
+        <script>
+            function test(){
+               if((document.getElementById("email").value =="")||(document.getElementById("pwd").value =="")){
+                    alert("null value is not allowed");
+                }
+                if(document.getElementById("email").value!="")
+                {
+                var em=document.getElementById("email").value;
+                
+                var re = /\S+@\S+\.\S+/;
+               // alert(re.test(em));
+                    if(re.test(em)==false){
+                     alert("enter valid email address");
+                     }
+    }
+    if(document.getElementById("pwd").value !=""){
+         var ps=document.getElementById("pwd").value;
+        var regularExpression = /^[a-zA-Z0-9]{8,}$/;  
+        if(regularExpression.test(pwd)==false){
+            alert("password should be alphanumeric");
+        }
+    }
+    
+    
+    
+                }
+                
+            
+        </script>
+        <style>
+            .leftside,.rightside{
+                height: 100vh;
+                width:100%;
+            }
+            
+            .leftside{
+                background:aquamarine;
+                text-align: center;
+                padding-top: 150px;
+            }
+            .rightside{
+                background:azure;
+            }
+            h1{
+                text-align: center;
+               // text-height:50vh;
+                background:deeppink;
+                //height: 20vh;
+                font-size: 50px;
+                margin-top: 0;
+                margin-bottom: 0;
+                
+                
+            }
+            .col{
+                margin-right: -15px;
+                margin-left: -20px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .button{
+                 border-radius: 15px;
+                  background:darkgrey; 
+                 padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+            }
+           
+            .button1 {
+                background-color: darkgrey; 
+                color: black;
+            }
+            .button1:hover{
+                border-radius: 15px;
+                background-color: deeppink;
+                color:darkgrey;
+            }
+            .button2 {
+            background-color: darkgrey; 
+            color: black;
+            margin-right: 20px;
+            margin-left: 20px;
+            border-color:black;
+            }
+            .button2:hover{
+                border-radius: 15px;
+                background-color: deeppink;
+                color:darkgrey;
+                padding-left: 20px;
+                
+            }
+            .mySlides {display:none;}
+             </style>
+
+       
+    </head>
+    <body>
+        <h1>IndiaKart</h1>
+        
+    <form action="login.jsp" method="post">  
+        <div class="row">
+            
+            <div class="col">
+                <div class="leftside">
+                    Email:  <input type="text" name="email" id="email"><br/><br/>
+                    Password: <input type="password" id="pwd" name="pwd"><br/><br/>
+                  <!--  <button class="button button1" type="submit"  onclick="test()">sign in</button> -->
+                  <input type = "submit" class="button button1" value="Sign in" name = "s1">
+                   
+                    <a  class="button button2"  href="registerpage.html">Register</a><br/>
+                    <a style="margin-top: 10px;" href="forpass.html">forget password</a>
+                   <!-- <a href="login.jsp? s1=link" name="s1">Get user details</a> -->
+                </div>
+                
+            </div>
+           <div class="col">
+                <div class="rightside" style="">
+                   <!--<img src="image1.jpg"> -->
+                   <!--<div class="w3-content w3-section" style="max-width:200px">-->
+  <img class="mySlides" src="image8.jpg" style="width:80%;height:95%;">
+ <img class="mySlides" src="image6.jpg" >
+  <img class="mySlides" src="image7.jpg" >
+<!--</div>-->
+               </div>
+            </div>
+                
+        </div>
+       
+        
+    </form>
+        <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+    </body>
+    
+</html>

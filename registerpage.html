@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function testregister(){
+                 if((document.getElementById("name").value =="")||( document.getElementById("age").value =="")||(document.getElementById("pwd").value=="" )||(document.getElementById("email").value=="" )||(document.getElementById("address").value=="" ))
+             {
+                 alert("no null value is allowed");
+             }  
+             if(( document.getElementById("male").checked == false)&&( document.getElementById("female").checked == false)){
+                 alert("select gender");
+             }
+              
+             if(document.getElementById("email").value!="")
+                {
+                var em=document.getElementById("email").value;
+                
+                var re = /\S+@\S+\.\S+/;
+               // alert(re.test(em));
+                    if(re.test(em)==false){
+                     alert("enter valid email address");
+                     }
+                }
+    if(document.getElementById("pwd").value !=""){
+         var ps=document.getElementById("pwd").value;
+        var regularExpression = /^[a-zA-Z0-9]{8,}$/;  
+        if(regularExpression.test(pwd)==false){
+            alert("password should be alphanumeric");
+        }
+        if(isNaN(document.getElementById("age").value))
+             {
+                 alert("age should be in number");
+             }
+    }
+    
+    
+    
+            }
+        </script>
+        <style>
+            body{
+                padding-top: 100px;
+             text-align: center;
+               // text-height:50vh;
+                background:aquamarine;
+                //height: 20vh;
+                font-size: 20px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+             .but{
+                 border-radius: 15px;
+                  background:darkgrey; 
+                 padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+            }
+           
+            .but {
+                background-color: darkgrey; 
+                color: black;
+            }
+            .but:hover{
+                border-radius: 15px;
+                background-color: deeppink;
+                color:darkgrey;
+            }
+        </style>
+    </head>
+    <body>
+       <form action="registertable" method="post">
+                 
+   Name:<input type="text" name="name" id="name"><br/><br/>
+                   Age:<input type="text" name="age" id="age"><br/><br/>
+               
+       Email:<input type="text" name="email" id="email"><br/><br/>
+       Password: <input type="password" id="pwd" name="pwd"><br/><br/>
+                    Gender:
+                    <input type="radio" id="male" name="gender" value="male"/>Male
+                    <input type="radio" id="female" name="gender" value="female"/>Female<br/><br/>
+                    Address:<textarea placeholder="Enter Address here..." rows="4" cols="50" name="address">
+</textarea><br/><br/>
+ <input type="submit" value="submit" class="but" onclick="testregister()">
+                  <!--  <button class="button button1" type="submit"  onclick="">Register</button>-->
+      </form> 
+    </body>
+</html>
